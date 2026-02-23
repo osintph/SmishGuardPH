@@ -1,6 +1,30 @@
 {
-  "title": "SmishGuard PH", "heading": "Report a Text Scam",
-  "subheading": "Help protect Filipinos by reporting malicious SMS.",
-  "sender_lbl": "Sender ID / Number", "msg_lbl": "Scam Message",
-  "btn": "Submit Report", "processing": "Processing..."
+  "nav": {
+    "title": "SmishGuard PH",
+    "tab_report": "Report a Scam",
+    "tab_feed": "Threat Feed"
+  },
+  "form": {
+    "heading": "Report a Text Scam",
+    "subheading": "Help protect Filipinos by reporting malicious SMS.",
+    "sender_label": "Sender ID / Number",
+    "message_label": "Scam Message",
+    "submit_btn": "Submit Report",
+    "processing": "Processing...",
+    "success": "Maraming Salamat! Your report has been added to the national threat feed."
+  },
+  "edu": {
+    "what_title": "🤔 What is Smishing?",
+    "what_desc": "Smishing (SMS Phishing) is a scam where fraudsters send text messages pretending to be from legitimate organizations (like GCash, Maya, or banks) to trick you into clicking malicious links.",
+    "how_title": "🛡️ How to help",
+    "how_desc": "1. Do not click the link!\n2. Copy the exact text message.\n3. Paste it here to warn others."
+  },
+  "feed": {
+    "title": "Live Threat Feed",
+    "desc": "Real-time list of malicious URLs and numbers reported by the community.",
+    "col_date": "Date Reported",
+    "col_sender": "Sender",
+    "col_url": "Malicious URL",
+    "empty": "No threats detected yet."
+  }
 }

@@ -1,6 +1,30 @@
 {
-  "title": "SmishGuard PH", "heading": "I-report ang Text Scam",
-  "subheading": "Tumulong protektahan ang mga Pilipino laban sa panloloko.",
-  "sender_lbl": "Numero / Pangalan ng Nagpadala", "msg_lbl": "Mensahe ng Scam",
-  "btn": "Ipadala ang Report", "processing": "Pinoproseso..."
+  "nav": {
+    "title": "SmishGuard PH",
+    "tab_report": "I-report ang Scam",
+    "tab_feed": "Live na Banta"
+  },
+  "form": {
+    "heading": "I-report ang Text Scam",
+    "subheading": "Tumulong protektahan ang mga Pilipino laban sa panloloko.",
+    "sender_label": "Numero / Nagpadala",
+    "message_label": "Mensahe ng Scam",
+    "submit_btn": "Ipadala ang Report",
+    "processing": "Pinoproseso...",
+    "success": "Maraming Salamat! Ang iyong report ay naidagdag na sa national threat feed."
+  },
+  "edu": {
+    "what_title": "🤔 Ano ang Smishing?",
+    "what_desc": "Ang Smishing (SMS Phishing) ay isang panloloko kung saan nagpapadala ng text ang mga scammer na nagpapanggap bilang lehitimong kumpanya (tulad ng GCash, Maya, o bangko) upang mapindot mo ang mapanganib na link.",
+    "how_title": "🛡️ Paano makakatulong",
+    "how_desc": "1. Huwag i-click ang link!\n2. Kopyahin ang buong text message.\n3. I-paste dito para mabalaan ang iba."
+  },
+  "feed": {
+    "title": "Live na Listahan ng Banta",
+    "desc": "Real-time na listahan ng mga mapanganib na URL at numero mula sa komunidad.",
+    "col_date": "Petsa",
+    "col_sender": "Nagpadala",
+    "col_url": "Mapanganib na URL",
+    "empty": "Wala pang naitatalang banta."
+  }
 }
