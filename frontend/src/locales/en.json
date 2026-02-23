@@ -1,0 +1,6 @@
+{
+  "title": "SmishGuard PH", "heading": "Report a Text Scam",
+  "subheading": "Help protect Filipinos by reporting malicious SMS.",
+  "sender_lbl": "Sender ID / Number", "msg_lbl": "Scam Message",
+  "btn": "Submit Report", "processing": "Processing..."
+}

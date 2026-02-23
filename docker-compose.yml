@@ -1,0 +1,31 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://smishguard:securepassword@db:5432/smishguard_db
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: smishguard
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: smishguard_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
