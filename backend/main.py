@@ -58,3 +58,34 @@ def create_report(report: ReportCreate, db: Session = Depends(database.get_db)):
 def get_feed(api_key: str = Depends(get_api_key), db: Session = Depends(database.get_db)):
     reports = db.query(models.Report).order_by(models.Report.timestamp.desc()).limit(50).all()
     return {"threat_feed": reports}
+import urllib.request
+import xml.etree.ElementTree as ET
+
+# --- NEW: Philippine Cyber News Endpoint ---
+@app.get("/api/news")
+def get_ph_cyber_news():
+    # Fetches real-time PH cybersecurity and data privacy news via Google News RSS
+    url = "https://news.google.com/rss/search?q=Philippines+cybersecurity+OR+%22Data+Privacy+Act%22+OR+smishing&hl=en-PH&gl=PH&ceid=PH:en"
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            xml_data = response.read()
+        
+        root = ET.fromstring(xml_data)
+        news_items = []
+        
+        # Grab the top 4 latest news articles
+        for item in root.findall('.//item')[:4]: 
+            # Clean up the title (Google News appends the publisher at the end)
+            raw_title = item.find('title').text
+            title = raw_title.rsplit(' - ', 1)[0] if ' - ' in raw_title else raw_title
+            
+            news_items.append({
+                "title": title,
+                "link": item.find('link').text,
+                "pubDate": item.find('pubDate').text
+            })
+        return {"status": "success", "news": news_items}
+    except Exception as e:
+        print(f"Error fetching news: {e}")
+        return {"status": "error", "news": []}
